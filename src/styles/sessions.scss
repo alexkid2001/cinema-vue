@@ -1,0 +1,19 @@
+.sessions {
+  width: 100%;
+
+  thead {
+
+    td {
+      text-align: center;
+    }
+  }
+
+  td {
+    padding: 10px;
+
+    &:nth-child(n+3) {
+      text-align: center;
+      white-space: normal;
+    }
+  }
+}

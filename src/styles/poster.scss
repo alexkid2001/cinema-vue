@@ -1,0 +1,135 @@
+.poster {
+  width: 200px;
+  margin: 20px;
+  box-shadow: 1px 1px 4px 1px rgba(grey, .5);
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.02);
+    transition: all .3s;
+  }
+  
+  &__image {
+    width: 100%;
+    height: 300px;
+
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__info-wrap {
+    padding: 10px;
+    height: 100px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__name {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-height: 48px;
+      
+    &::first-letter {
+      text-transform: uppercase;
+    }
+  }
+
+  &__footer {
+    margin-top: auto;
+    font-weight: 200;
+    // white-space: nowrap;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &__ganres {
+    // white-space: nowrap;
+    // overflow: hidden;
+    // text-overflow: ellipsis;
+  }
+
+  &_details {
+    width: 100%;
+    margin: 0;
+    display: flex;
+    box-shadow: none;
+    margin-top: 50px;
+    align-items: flex-start;
+    cursor: auto;
+
+    &:hover {
+      transform: none;
+      transition: none;
+    }
+
+    .poster {
+      
+      &__image {
+        width: 250px;
+        flex-basis: 250px;
+        height: auto;
+
+        img {
+          object-fit: contain;
+        }
+      }
+
+      &__info-wrap {
+        width: auto;
+        margin-top: 0;
+        overflow: visible;
+        margin: 20px;
+        flex: 1;
+        height: auto;
+
+        & > *:nth-child(n+2) {
+          margin-top: 20px;
+        }
+      }
+
+      &__name {
+        display: inline-block;
+        font-size: 24px;
+      }
+    }
+  }
+
+  &_session {
+    display: flex;
+    box-shadow: none;
+    margin: 0;
+    width: auto;
+
+    .poster {
+
+      &__image {
+        width: 60px;
+        height: 75px;
+      }
+
+      &__info-wrap {
+        padding: 5px 10px;
+        height: 75px;
+      }
+
+      &__name {
+        display: inline-block;
+      }
+
+      &__footer {
+
+      }
+    }
+  }
+}

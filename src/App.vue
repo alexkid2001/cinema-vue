@@ -1,32 +1,60 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
+<v-app id="inspire">
+  
+  <v-app-bar
+    app
+    clipped-left
+  >
+    <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
+    <span class="title ml-3 mr-5">Cinema</span>
+    <Search />
+
+  </v-app-bar>
+
+  <v-content
+    class="fill-height"
+    fluid
+  >
+    
+      <v-tabs
+      align-with-title
+      >
+        <v-tab @click="$router.push({name: 'posters'})">Home</v-tab>
+        <v-tab @click="$router.push({name: 'sessions'})">Session</v-tab>
+      </v-tabs>
+    
     <router-view/>
-  </div>
+  </v-content>
+  <v-footer app>
+    <span>&copy; 2020</span>
+  </v-footer>
+</v-app>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
+<script>
+import Search from '@/components/Search.vue'
+export default {
+  data () {
+    return {
+      drawer: null,
+      searchText: '',
+      searchParams: {
+        name: '',
+        ganre: ''
+      }
     }
+  },
+  components: {
+    Search
+  },
+  created () {
+    this.$vuetify.theme.dark = true
+  },
+  mounted () {
   }
 }
+</script>
+
+<style lang="scss">
+
 </style>

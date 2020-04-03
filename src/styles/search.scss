@@ -1,0 +1,27 @@
+.search {
+  display: flex;
+  align-items: flex-start;
+
+  & > *:nth-child(n+2) {
+    margin-left: 40px !important;
+  }
+
+  .v-input {
+    width: 200px !important;
+  }
+
+  .v-input__slot {
+    min-height: 48px !important;
+  }
+
+  .theme--light.v-select .v-select__selection--comma {
+    color: white;
+  }
+
+  .v-text-field--enclosed .v-input__append-inner {
+    margin-top: 13px;
+  }
+  .v-text-field--outlined .v-label {
+    top: 15px;
+  }
+}
